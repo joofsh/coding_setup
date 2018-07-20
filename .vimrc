@@ -17,6 +17,12 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'edsono/vim-matchit'
 Plugin 'groenewege/vim-less'
 Plugin 'sjl/gundo.vim'
+Plugin 'nvie/vim-flake8'
+
+" ruby & rails plugins
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rails'
+
 "Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -70,6 +76,7 @@ let g:ctrlp_custom_ignore = {
 set laststatus=2
 set statusline=%f         " file name
 set statusline+=%=       " Switch to the right side
+set statusline+=%c,
 set statusline+=%2l        " Current line
 set statusline+=/%L        " Current line
 
@@ -100,3 +107,10 @@ map <Space> <Leader>
 
 " vim jsx
 let g:jsx_ext_required = 0
+
+" Support python 4 spaces
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
+
+" pry support
+" imap bpry<Tab> require'pry';binding.pry<ESC>

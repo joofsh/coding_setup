@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -79,11 +78,30 @@ export EDITOR='vim'
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+
+# Fixes zsh prompt. Only shows machine when not on home machine
+#export DEFAULT_USER='jd'
+prompt_context () {}
+
+# For vim mode in zsh
+bindkey -v
+export KEYTIMEOUT=1 # reduce timeout
+# ctrl-r starts searching history backward
+bindkey '^r' history-incremental-search-backward
+# Backspace key
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.sh/nava
+source ~/.sh/local.sh
+source ~/.sh/nava.sh
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Pyenv setup
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+eval "$(rbenv init -)"
