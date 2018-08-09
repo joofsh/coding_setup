@@ -50,7 +50,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -96,12 +96,17 @@ bindkey '^h' backward-delete-char
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.sh/local.sh
-source ~/.sh/nava.sh
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Pyenv setup
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
+# Ruby setup
 eval "$(rbenv init -)"
+
+# postgres
+export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
+
+
+# node
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
