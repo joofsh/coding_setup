@@ -14,7 +14,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'hdima/python-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'suan/vim-instant-markdown'
-Plugin 'edsono/vim-matchit'
+Plugin 'andymass/vim-matchup'
 Plugin 'groenewege/vim-less'
 Plugin 'sjl/gundo.vim'
 Plugin 'nvie/vim-flake8'
@@ -110,6 +110,9 @@ let g:jsx_ext_required = 0
 
 " Support python 4 spaces
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
+" Matchit
+let g:matchup_matchparen_enabled = 0
 
 
 " pry support
