@@ -89,6 +89,8 @@ set softtabstop=2
 set ignorecase
 set smartcase
 
+" Add support for backspace key
+set backspace=indent,eol,start
 
 " move where backup files get saved to avoid conflicts
 set backupdir=~/.vim/backup_files//

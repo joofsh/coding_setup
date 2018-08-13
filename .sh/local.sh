@@ -16,3 +16,7 @@ alias ..5="cd ../../../../.."
 # git aliases
 alias gu="git pull"
 alias ga.="git add ."
+alias gdc="git diff --cached"
+
+
+export LESS="-F -X $LESS"
