@@ -65,12 +65,7 @@ set timeoutlen=1000 ttimeoutlen=0
 "
 " ctrlp options
 let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*     " MacOSX/Linux
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+let g:ctrlp_custom_ignore = 'tmp\|node_modules\|DS_Store\|git'
 
 " show file name in status line
 set laststatus=2

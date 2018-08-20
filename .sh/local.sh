@@ -20,3 +20,7 @@ alias gdc="git diff --cached"
 
 
 export LESS="-F -X $LESS"
+
+
+# Healthify specific
+alias aptlogin="aptible login --lifetime=4d --email=jd@healthify.us"
