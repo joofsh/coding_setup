@@ -106,7 +106,8 @@ eval "$(rbenv init -)"
 # postgres
 export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 
-
 # node
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+eval "$(nodenv init -)"
+
+stty sane
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"

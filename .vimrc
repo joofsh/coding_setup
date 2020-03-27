@@ -18,6 +18,9 @@ Plugin 'andymass/vim-matchup'
 Plugin 'groenewege/vim-less'
 Plugin 'sjl/gundo.vim'
 Plugin 'nvie/vim-flake8'
+Plugin 'w0rp/ale'
+Plugin 'janko-m/vim-test'
+Plugin 'chrisbra/Colorizer'
 
 " ruby & rails plugins
 Plugin 'tpope/vim-endwise'
@@ -65,7 +68,8 @@ set timeoutlen=1000 ttimeoutlen=0
 "
 " ctrlp options
 let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = 'tmp\|node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'public\|tmp\|node_modules\|DS_Store\|git'
+set wildignore+=*/public/*
 
 " show file name in status line
 set laststatus=2
@@ -111,6 +115,16 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 " Matchit
 let g:matchup_matchparen_enabled = 0
 
+" line numbers
+set number
 
 " pry support
 " imap bpry<Tab> require'pry';binding.pry<ESC>
+
+" React support
+imap dbg<Tab> debugger //eslint-disable-line<ESC>
+
+
+"reset vim to just the root directory (if too many tabs open)
+" can run it by typing `tc`
+nnoremap tc :tabedit .<return>:tabo<return>
