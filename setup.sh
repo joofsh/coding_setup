@@ -11,6 +11,12 @@ fi
 
 brew install rbenv tmux dnsmasq redis the_silver_searcher reattach-to-user-namespace hub
 
+# install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+# Install vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Healthify specific
 brew tap cartr/qt4

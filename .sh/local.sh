@@ -2,6 +2,7 @@
 alias hf="cd ~/src/healthify"
 alias san="cd ~/src/aptible-staging-automation"
 alias cs="cd ~/src/coding_setup"
+alias fe="cd ~/src/healthify-frontend-challenge"
 
 # better ag
 alias ag='ag --path-to-ignore ~/.ignore'

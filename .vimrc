@@ -8,7 +8,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'hdima/python-syntax'
@@ -21,6 +22,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'w0rp/ale'
 Plugin 'janko-m/vim-test'
 Plugin 'chrisbra/Colorizer'
+Plugin 'mechatroner/rainbow_csv'
 
 " ruby & rails plugins
 Plugin 'tpope/vim-endwise'
@@ -46,6 +48,10 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+nnoremap <F1> :w<CR>
+inoremap <F1> <esc>:w<CR>
+vmap <F1> :w<CR>
+
 " Saving with F1
 nnoremap <F1> :w<CR>
 inoremap <F1> <esc>:w<CR>
@@ -67,9 +73,6 @@ set timeoutlen=1000 ttimeoutlen=0
 ":map <,> <leader>
 "
 " ctrlp options
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_custom_ignore = 'public\|tmp\|node_modules\|DS_Store\|git'
-set wildignore+=*/public/*
 
 " show file name in status line
 set laststatus=2
@@ -96,11 +99,23 @@ set backupdir=~/.vim/backup_files//
 set directory=~/.vim/swap_files//
 set undodir=~/.vim/undo_files//
 
+" fzf.vim settings
+set rtp+=/usr/local/opt/fzf
+nmap <C-P> :FZF<CR>
+
+
 " cntrl P settings
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/public/*,*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
+
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 10000
-let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " nerd commenter
 let g:NERDSpaceDelims = 1
@@ -123,6 +138,10 @@ set number
 
 " React support
 imap dbg<Tab> debugger //eslint-disable-line<ESC>
+
+
+" save using tab
+map <Leader><Tab> :w<return>
 
 
 "reset vim to just the root directory (if too many tabs open)

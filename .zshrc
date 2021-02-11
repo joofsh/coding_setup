@@ -1,3 +1,5 @@
+ZSH_DISABLE_COMPFIX="true"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -50,7 +52,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,5 +111,13 @@ export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 # node
 eval "$(nodenv init -)"
 
+# ssh agent
+sh-add -A 2>/dev/null
+
 stty sane
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+
+# Disable spring
+export DISABLE_SPRING=1
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
