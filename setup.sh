@@ -6,38 +6,22 @@ if which brew; then
   echo "Brew already installed"
 else
   echo "Installing brew"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+ echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/jonathan.pagano/.zprofile
+ eval "$(/opt/homebrew/bin/brew shellenv)"
+
 fi
 
-brew install rbenv tmux dnsmasq redis the_silver_searcher reattach-to-user-namespace hub
+brew install rbenv tmux dnsmasq redis the_silver_searcher reattach-to-user-namespace hub neovim
 
 # install oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
-# Install vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-# Healthify specific
-brew tap cartr/qt4
-brew tap-pin cartr/qt4
-brew install qt-webkit@2.3
-
-echo "Installing ruby"
-cd ~/src/healthify
-rbenv install $(cat .ruby-version)
-gem update --system
-gem install bundler
-bundle install
-
-brew tap caskroom/cask
-brew tap caskroom/versions
-brew cask install java8
-brew tap healthify/stale-brews
-brew install elasticsearch@5.0
 
 
 ln -s ~/src/coding_setup/.vimrc $HOME
+ln -s ~/src/coding_setup/.config $HOME
 ln -s ~/src/coding_setup/.tmux.conf $HOME
 ln -s ~/src/coding_setup/.zshrc $HOME
 ln -s ~/src/coding_setup/.sh $HOME

@@ -23,6 +23,10 @@ Plugin 'w0rp/ale'
 Plugin 'janko-m/vim-test'
 Plugin 'chrisbra/Colorizer'
 Plugin 'mechatroner/rainbow_csv'
+Plugin 'BlakeWilliams/vim-pry'
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'nvim-telescope/telescope-fzf-native.nvim'
 
 " ruby & rails plugins
 Plugin 'tpope/vim-endwise'
@@ -99,9 +103,8 @@ set backupdir=~/.vim/backup_files//
 set directory=~/.vim/swap_files//
 set undodir=~/.vim/undo_files//
 
-" fzf.vim settings
-set rtp+=/usr/local/opt/fzf
-nmap <C-P> :FZF<CR>
+" telescope settings
+nmap <C-P> <cmd>Telescope find_files<cr>
 
 
 " cntrl P settings
@@ -133,8 +136,8 @@ let g:matchup_matchparen_enabled = 0
 " line numbers
 set number
 
-" pry support
-" imap bpry<Tab> require'pry';binding.pry<ESC>
+" debugger support
+nmap <leader>d :call pry#insert()<cr>
 
 " React support
 imap dbg<Tab> debugger //eslint-disable-line<ESC>

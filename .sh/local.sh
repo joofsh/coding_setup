@@ -31,6 +31,10 @@ alias git_delete_merged_branches='git checkout -q master && git for-each-ref ref
 
 export LESS="-F -X $LESS"
 
+alias ogvim="vi"
+alias vi="nvim"
+# alias vim="nvim"
 
-# Healthify specific
-alias aptlogin="aptible login --lifetime=7d --email=jd@healthify.us"
+
+# Parachute specific
+alias wf="cd ~/src/app-workflow"
