@@ -14,6 +14,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'numToStr/Comment.nvim'
 
 Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
 
 
 Plug 'autozimu/LanguageClient-neovim', {
