@@ -1,0 +1,35 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "cmd+s",
+        "command": "workbench.action.files.save"
+    },
+    {
+        "key": "cmd+s",
+        "command": "-workbench.action.files.save"
+    },
+    {
+        "key": "ctrl+w space",
+        "command": "terminal.focus"
+    },
+    {
+        "key": "ctrl+w up",
+        "command": "workbench.action.terminal.switchTerminal"
+    },
+    {
+        "key": "ctrl+w up",
+        "command": "workbench.action.quickOpenTerm"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "vscode-neovim.send",
+        "args": "<C-u>",
+        "when": "editorTextFocus && neovim.init"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "vscode-neovim.send",
+        "args": "<C-d>",
+        "when": "editorTextFocus && neovim.init"
+    }
+]

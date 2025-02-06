@@ -1,3 +1,4 @@
+. /usr/local/opt/asdf/libexec/asdf.sh
 ZSH_DISABLE_COMPFIX="true"
 
 # If you come from bash you might have to change your $PATH.
@@ -100,16 +101,7 @@ bindkey '^h' backward-delete-char
 source ~/.sh/local.sh
 
 # Pyenv setup
-eval "$(pyenv init -)"
-
-# Ruby setup
-eval "$(rbenv init -)"
-
-# postgres
-export PATH="/Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
-
-# node
-eval "$(nodenv init -)"
+# eval "$(pyenv init -)"
 
 # ssh agent
 sh-add -A 2>/dev/null
@@ -121,3 +113,28 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export DISABLE_SPRING=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/jd/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/jd/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/jd/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/jd/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/Users/jd/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/Users/jd/miniforge3/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
+# echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+# export PATH="/Applications/Docker.app/Contents/Resources/bin/docker:$PATH"

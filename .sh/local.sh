@@ -47,6 +47,9 @@ alias vi="nvim"
 # alias vim="nvim"
 alias n="load_nvm"
 
+# Personal projects
+alias aw="cd ~/src/author_website"
+
 
 # Parachute specific
 alias wf="cd ~/src/app-workflow"
@@ -54,3 +57,12 @@ alias inf="cd ~/src/infrastructure"
 alias mi="cd ~/src/mirth-imports"
 alias mir="cd ~/src/mirth"
 alias cinf="cd ~/src/corp-infrastructure"
+
+alias obs="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
+alias ai="cd ~/src/llm_practice"
+
+alias phw="~/src/eventual_company/web"
+alias phl="~/src/eventual_company/wisdom"
+
+# login to ECR
+alias ecr-login='aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 242201315437.dkr.ecr.us-east-1.amazonaws.com'
