@@ -150,3 +150,5 @@ map <Leader><Tab> :w<return>
 "reset vim to just the root directory (if too many tabs open)
 " can run it by typing `tc`
 nnoremap tc :tabedit .<return>:tabo<return>
+
+set mouse=nicr

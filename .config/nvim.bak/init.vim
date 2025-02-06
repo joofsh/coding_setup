@@ -49,7 +49,7 @@ Plug 'prettier/vim-prettier', {
 
 
 " markdown
-Plug 'suan/vim-instant-markdown'
+" Plug 'suan/vim-instant-markdown'
 
 Plug 'mxw/vim-jsx'
 
@@ -111,7 +111,9 @@ require('telescope').setup{
       "tmp/*",
       "^log/*",
       "data/backfill/*",
-      "cover/*"
+      "cover/*",
+      "_site/*",
+      "*/bootstrap*/*",
     }
   },
 --  pickers = {

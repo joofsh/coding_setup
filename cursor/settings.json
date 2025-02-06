@@ -1,0 +1,48 @@
+{
+    "window.commandCenter": 1,
+    "workbench.colorTheme": "Solarized Light",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true,
+    "files.autoSaveWhenNoErrors": true,
+    "rubyLsp.rubyVersionManager": {
+        "identifier": "asdf",
+        "path": "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+    },
+    "ruby.useLanguageServer": true,
+    "ruby.format": "rubocop",
+    "ruby.lint": {
+        "rubocop": true
+    },
+    "ruby.rubocop.executePath": "/Users/jd/.asdf/shims/",
+    "ruby.interpreter.commandPath": "/Users/jd/.asdf/shims/ruby",
+    "ruby.useWorkspaceLibrary": true,
+    "editor.tabSize": 2,
+    "redhat.telemetry.enabled": false,
+    "dev.containers.defaultFeatures": {},
+    "files.autoSave": "afterDelay",
+    "rubyLsp.addonSettings": {},
+    "terminal.integrated.env.osx": {
+        "PATH": ""
+    },
+    "terminal.integrated.inheritEnv": true,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.profiles.osx": {
+        "zsh": {
+            "path": "/bin/zsh",
+            "args": [
+                "-l"
+            ]
+        }
+    },
+    "rubyLsp.trace.server": "verbose",
+    "ruby.debug.console": true,
+    "ruby.trace.server": "verbose",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim", // or your nvim path
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init_cursor.lua", // if you have one
+    "keyboard.dispatch": "keyCode",
+    "vscode-neovim.useCtrlKeysForNormalMode": true
+}
