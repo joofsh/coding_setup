@@ -1,3 +1,4 @@
+-- cntrl+up and down to navigate vertically
 vim.keymap.set(
   "n",
   "<C-u>",
@@ -21,3 +22,7 @@ vim.keymap.set(
     })
   end
 )
+
+-- Use == to format
+vim.keymap.set("n", "==", function() vim.fn.VSCodeNotify "editor.action.formatSelection" end)
+vim.keymap.set("n", "=", function() vim.fn.VSCodeNotify "editor.action.formatSelection" end)

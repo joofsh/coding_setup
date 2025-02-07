@@ -31,5 +31,11 @@
         "command": "vscode-neovim.send",
         "args": "<C-d>",
         "when": "editorTextFocus && neovim.init"
+    },
+    {
+        "key": "=",
+        "command": "vscode-neovim.send",
+        "args": "=",
+        "when": "editorTextFocus && neovim.init"
     }
 ]
