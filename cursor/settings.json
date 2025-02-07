@@ -7,6 +7,7 @@
     },
     "editor.formatOnSave": true,
     "notebook.formatOnSave.enabled": true,
+    "files.insertFinalNewline": true,
     "files.autoSaveWhenNoErrors": true,
     "rubyLsp.rubyVersionManager": {
         "identifier": "asdf",
@@ -31,12 +32,19 @@
     "rubyLsp.trace.server": "verbose",
     "ruby.debug.console": true,
     "ruby.trace.server": "verbose",
+    "dotfiles.repository": "git@github.com:joofsh/coding_setup.git",
+    "dotfiles.targetPath": "~/coding_setup",
+    "dotfiles.installCommand": "~/coding_setup/install.sh",
+    "remote.containers.dotfiles.repository": "git@github.com:joofsh/coding_setup.git", // Add this
+    "remote.containers.dotfiles.targetPath": "~/coding_setup", // Add this
+    "remote.containers.dotfiles.installCommand": "~/coding_setup/install.sh" // Add this
     "[ruby]": {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "Shopify.ruby-lsp"
     },
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim", // or your nvim path
     "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init_cursor.lua", // if you have one
+    "vscode-neovim.neovimClean": true
     "keyboard.dispatch": "keyCode",
     "vscode-neovim.useCtrlKeysForNormalMode": true,
     // Terminal-specific font
