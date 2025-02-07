@@ -13,18 +13,47 @@
         "path": "/opt/homebrew/opt/asdf/libexec/asdf.sh"
     },
     "ruby.useLanguageServer": true,
-    "ruby.format": "rubocop",
+    "ruby.format": "Shopify.ruby-lsp",
     "ruby.lint": {
         "rubocop": true
     },
     "ruby.rubocop.executePath": "/Users/jd/.asdf/shims/",
+    "ruby.rubocop.onSave": true,
     "ruby.interpreter.commandPath": "/Users/jd/.asdf/shims/ruby",
     "ruby.useWorkspaceLibrary": true,
     "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
     "redhat.telemetry.enabled": false,
     "dev.containers.defaultFeatures": {},
     "files.autoSave": "afterDelay",
     "rubyLsp.addonSettings": {},
+    "rubyLsp.trace.server": "verbose",
+    "ruby.debug.console": true,
+    "ruby.trace.server": "verbose",
+    "[ruby]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Shopify.ruby-lsp"
+    },
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim", // or your nvim path
+    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init_cursor.lua", // if you have one
+    "keyboard.dispatch": "keyCode",
+    "vscode-neovim.useCtrlKeysForNormalMode": true,
+    // Terminal-specific font
+    "terminal.integrated.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    // Optional: Terminal font size and line height
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.letterSpacing": 0.5,
+    "terminal.integrated.gpuAcceleration": "auto",
+    "terminal.integrated.hardware": true,
+    "terminal.integrated.rendererType": "canvas",
+    "terminal.integrated.fontLigatures": true,
+    "terminal.integrated.minimumContrastRatio": 7,
+    "terminal.integrated.fontWeight": 500,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     "terminal.integrated.env.osx": {
         "PATH": ""
     },
@@ -37,12 +66,5 @@
                 "-l"
             ]
         }
-    },
-    "rubyLsp.trace.server": "verbose",
-    "ruby.debug.console": true,
-    "ruby.trace.server": "verbose",
-    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim", // or your nvim path
-    "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init_cursor.lua", // if you have one
-    "keyboard.dispatch": "keyCode",
-    "vscode-neovim.useCtrlKeysForNormalMode": true
+    }
 }
