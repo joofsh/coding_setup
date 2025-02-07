@@ -1,14 +1,15 @@
 #!/bin/bash
 
 
+# Make backup before overriding
+mv ~/.zshrc ~/.zshrc_bak
 
 
-ln -s ~/src/coding_setup/.vimrc $HOME
-ln -s ~/src/coding_setup/.config $HOME
-ln -s ~/src/coding_setup/.tmux.conf $HOME
-ln -s ~/src/coding_setup/.zshrc $HOME
-ln -s ~/src/coding_setup/.sh $HOME
-ln -s ~/src/coding_setup/.ignore $HOME
+ln -s ~/dotfiles/.config/nvim $HOME
+ln -s ~/dotfiles/.tmux.conf $HOME
+ln -s ~/dotfiles/.zshrc $HOME
+ln -s ~/dotfiles/.sh $HOME
+ln -s ~/dotfiles/.ignore $HOME
 
 
 mkdir -p ~/.vim/backup_files
