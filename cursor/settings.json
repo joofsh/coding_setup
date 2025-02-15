@@ -38,10 +38,6 @@
     "remote.containers.dotfiles.repository": "git@github.com:joofsh/coding_setup.git", // Add this
     "remote.containers.dotfiles.targetPath": "~/coding_setup", // Add this
     "remote.containers.dotfiles.installCommand": "~/coding_setup/install.sh" // Add this
-    "[ruby]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "Shopify.ruby-lsp"
-    },
     "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim", // or your nvim path
     "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init_cursor.lua", // if you have one
     "vscode-neovim.neovimClean": true
@@ -68,6 +64,15 @@
     "terminal.integrated.inheritEnv": true,
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.profiles.osx": {
+        "tmux-shell": {
+            "path": "tmux",
+            "args": [
+                "new-session",
+                "-A",
+                "-s",
+                "vscode:${workspaceFolder}"
+            ]
+        },
         "zsh": {
             "path": "/bin/zsh",
             "args": [
