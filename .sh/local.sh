@@ -38,7 +38,7 @@ alias gsta="git stash"
 alias gco="git checkout"
 alias gst="git status"
 alias gpsup="git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
-alias git_delete_merged_branches='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -d $branch; done'
+alias git_delete_merged_branches='git branch --merged | grep -Ev "(^\*|^\+|master|main|dev)" | xargs --no-run-if-empty git branch -d'
 
 export LESS="-F -X $LESS"
 
@@ -66,3 +66,5 @@ alias phl="~/src/eventual_company/wisdom"
 
 # login to ECR
 alias ecr-login='aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 242201315437.dkr.ecr.us-east-1.amazonaws.com'
+
+alias aptl='aptible login --email=jonathanpagano@gmail.com --password=$APTIBLE_PASSWORD'

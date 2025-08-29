@@ -138,3 +138,11 @@ fi
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 
 # export PATH="/Applications/Docker.app/Contents/Resources/bin/docker:$PATH"
+
+. "$HOME/.local/bin/env"
+
+# Cursor-specific git configuration
+if [[ "$TERM_PROGRAM" == "vscode" || -n "$CURSOR_TRACE_ID" ]]; then
+  export GIT_PAGER=cat
+  export PAGER=cat
+fi
