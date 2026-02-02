@@ -1,10 +1,7 @@
 {
-    "window.commandCenter": 1,
+    "window.commandCenter": true,
     "workbench.colorTheme": "Solarized Light",
     "diffEditor.ignoreTrimWhitespace": true,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    },
     "editor.formatOnSave": true,
     "notebook.formatOnSave.enabled": true,
     "files.insertFinalNewline": true,
@@ -23,6 +20,7 @@
     "ruby.interpreter.commandPath": "/Users/jd/.asdf/shims/ruby",
     "ruby.useWorkspaceLibrary": true,
     "editor.lineNumbers": "on",
+    "editor.wordWrap": "on",
     "workbench.editor.showLineNumbers": true,
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
@@ -44,7 +42,13 @@
     "vscode-neovim.neovimInitVimPaths.darwin": "~/.config/nvim/init_cursor.lua",
     "vscode-neovim.neovimClean": true,
     "keyboard.dispatch": "keyCode",
+    "git.decorations.enabled": true,
+    "scm.diffDecorations": true,
     "vscode-neovim.useCtrlKeysForNormalMode": true,
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.neovimUseConfigFile": true,
+    "vim.neovimConfigPath": "~/.config/nvim/init_cursor.lua",
     "search.exclude": {
         "**/tmp": true,
         "**/log": true,
@@ -86,5 +90,123 @@
                 "-l"
             ]
         }
-    }
+    },
+    "editor.accessibilitySupport": "on",
+    "accessibility.signals.lineHasBreakpoint": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.chatEditModifiedFile": {
+        "sound": "off"
+    },
+    "accessibility.signals.chatRequestSent": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.chatResponseReceived": {
+        "sound": "off"
+    },
+    "accessibility.signals.clear": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.codeActionApplied": {
+        "sound": "off"
+    },
+    "accessibility.signals.codeActionTriggered": {
+        "sound": "off"
+    },
+    "accessibility.signals.onDebugBreak": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.diffLineDeleted": {
+        "sound": "off"
+    },
+    "accessibility.signals.diffLineInserted": {
+        "sound": "off"
+    },
+    "accessibility.signals.diffLineModified": {
+        "sound": "off"
+    },
+    "accessibility.signals.editsKept": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.positionHasError": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasError": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasFoldedArea": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasInlineSuggestion": {
+        "sound": "off"
+    },
+    "accessibility.signals.noInlayHints": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.notebookCellCompleted": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.notebookCellFailed": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.progress": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.taskCompleted": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.taskFailed": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.terminalBell": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.terminalCommandFailed": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.terminalCommandSucceeded": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.terminalQuickFix": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.editsUndone": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.voiceRecordingStarted": {
+        "sound": "off"
+    },
+    "accessibility.signals.voiceRecordingStopped": {
+        "sound": "off"
+    },
+    "accessibility.signals.positionHasWarning": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "accessibility.signals.lineHasWarning": {
+        "sound": "off",
+        "announcement": "auto"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "breadcrumbs.enabled": false,
+    "cursor.composer.usageSummaryDisplay": "always"
 }

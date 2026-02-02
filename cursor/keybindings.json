@@ -111,7 +111,16 @@
         "when": "terminalFocus"
     },
     {
-        "key": "cmd+e",
-        "command": "composerMode.background"
+        "key": "cmd+q",
+        "command": "composerMode.chat"
+    },
+    {
+        "key": "shift+alt+cmd+n",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "cmd+n",
+        "command": "composer.createNewWithPrevContext",
+        "when": "agentsPaneFocused && !editorTextFocus && !explorerViewletFocus && !filesExplorerFocus || composerFocused && !editorTextFocus && !explorerViewletFocus && !filesExplorerFocus || !editorTextFocus && !explorerViewletFocus && !filesExplorerFocus && activeEditor == 'workbench.editor.composer' || !editorTextFocus && !explorerViewletFocus && !filesExplorerFocus && focusedView =~ /^workbench.panel.aichat.view/ || auxiliaryBarFocus && cursor.agentIdeUnification.enabled && !editorTextFocus && !explorerViewletFocus && !filesExplorerFocus || editorTextFocus"
     }
 ]

@@ -61,10 +61,11 @@ alias cinf="cd ~/src/corp-infrastructure"
 alias obs="cd ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents"
 alias ai="cd ~/src/llm_practice"
 
-alias phw="~/src/eventual_company/web"
-alias phl="~/src/eventual_company/wisdom"
+alias pa="~/src/eventual_company/patient_advocacy"
+alias pa2="~/src/eventual_company/patient_advocacy_2"
+alias pam="~/src/eventual_company/patient_advocacy_demand_test"
 
 # login to ECR
 alias ecr-login='aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 242201315437.dkr.ecr.us-east-1.amazonaws.com'
 
-alias aptl='aptible login --email=jonathanpagano@gmail.com --password=$APTIBLE_PASSWORD'
+alias aptl='aptible login --email=jonathanpagano@gmail.com --password=$APTIBLE_PASSWORD --lifetime=7d'

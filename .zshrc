@@ -1,4 +1,20 @@
+# Essential tools - load these even in Cursor Agent terminal
 . /usr/local/opt/asdf/libexec/asdf.sh
+
+# Cursor Agent terminal fix - skip oh-my-zsh to prevent terminal hang
+# See: https://forum.cursor.com/t/guide-fix-cursor-agent-terminal-hangs-caused-by-zshrc/107260
+# COMPOSER_NO_INTERACTION is set by Cursor agent, PAGER may be 'cat' or 'head -n 10000 | cat'
+if [[ "$COMPOSER_NO_INTERACTION" == "1" ]]; then
+  # Still load essential PATH items for tools like node, postgres, etc.
+  export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+  export PATH="/usr/local/opt/libpq/bin:$PATH"
+  export PATH="/usr/local/share/google-cloud-sdk/bin:$PATH"
+  . "$HOME/.local/bin/env" 2>/dev/null || true
+  # Ensure asdf shims come FIRST in PATH (MUST be last to override /usr/local/bin)
+  export PATH="$HOME/.asdf/shims:$HOME/.asdf/bin:$PATH"
+  return
+fi
+
 ZSH_DISABLE_COMPFIX="true"
 
 # If you come from bash you might have to change your $PATH.
@@ -55,7 +71,18 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# Skip oh-my-zsh's compinit, we'll do our own faster one after
+skip_global_compinit=1
+
 source $ZSH/oh-my-zsh.sh
+
+# Speed up compinit - only regenerate completion dump once per day
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 
 # User configuration
 
@@ -103,8 +130,7 @@ source ~/.sh/local.sh
 # Pyenv setup
 # eval "$(pyenv init -)"
 
-# ssh agent
-sh-add -A 2>/dev/null
+# ssh agent - removed, macOS Keychain handles this automatically
 
 stty sane
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
@@ -114,23 +140,17 @@ export DISABLE_SPRING=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/jd/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/jd/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/jd/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/jd/miniforge3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/Users/jd/miniforge3/etc/profile.d/mamba.sh" ]; then
-    . "/Users/jd/miniforge3/etc/profile.d/mamba.sh"
-fi
+# >>> conda initialize (lazy-loaded for fast startup) >>>
+# Conda/mamba only initializes when first called
+conda() {
+    unfunction conda mamba 2>/dev/null
+    __conda_setup="$('/Users/jd/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    [ $? -eq 0 ] && eval "$__conda_setup"
+    unset __conda_setup
+    [ -f "/Users/jd/miniforge3/etc/profile.d/mamba.sh" ] && . "/Users/jd/miniforge3/etc/profile.d/mamba.sh"
+    conda "$@"
+}
+mamba() { conda && mamba "$@"; }
 # <<< conda initialize <<<
 
 # echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
@@ -146,3 +166,5 @@ if [[ "$TERM_PROGRAM" == "vscode" || -n "$CURSOR_TRACE_ID" ]]; then
   export GIT_PAGER=cat
   export PAGER=cat
 fi
+
+ export PATH=/usr/local/share/google-cloud-sdk/bin:"$PATH"
